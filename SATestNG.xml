@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="ElopSuperAdmin_Automation" verbose="3" parallel="false">
+
+
+	<test name="ElopSuperAdmin_Automation" preserve-order="true">
+		<parameter name="browser" value="chrome" />
+  	<!-- <groups>
+      <run>
+        <include name="Regression"/>
+      </run>
+    </groups> -->
+		<classes>
+			<class name="com.sa.testscripts.TestSuite">
+				<methods>
+				    <include name="Login"></include>
+				    <include name="SiteEdit"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<listeners>
+	    <listener class-name="com.sa.listeners.AnnotationTransformer"></listener>
+       <listener class-name="com.sa.listeners.TestListener"/>
+       <listener class-name="com.sa.listeners.ExtentReporterNG"/>
+  </listeners>
+  </suite>

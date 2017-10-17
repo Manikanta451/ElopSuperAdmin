@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />  
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-ElopSuperAdmin_Automation">
+              <span class="suite-name border-passed">ElopSuperAdmin_Automation</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-ElopSuperAdmin_Automation">
+                    <span>D:\ELOPSuperAdmin\SATestNG.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-ElopSuperAdmin_Automation">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-ElopSuperAdmin_Automation">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-ElopSuperAdmin_Automation">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-ElopSuperAdmin_Automation">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-ElopSuperAdmin_Automation">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-ElopSuperAdmin_Automation">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">2 methods,   2 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-ElopSuperAdmin_Automation" class="hide-methods passed suite-ElopSuperAdmin_Automation"> (hide)</a> <!-- hide-methods passed suite-ElopSuperAdmin_Automation -->
+                      <a href="#" panel-name="suite-ElopSuperAdmin_Automation" class="show-methods passed suite-ElopSuperAdmin_Automation"> (show)</a> <!-- show-methods passed suite-ElopSuperAdmin_Automation -->
+                    </span>
+                    <div class="method-list-content passed suite-ElopSuperAdmin_Automation">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-ElopSuperAdmin_Automation" title="com.sa.testscripts.TestSuite" hash-for-method="Login(com.sa.datainitialization.DataInt@180da663)">Login(com.sa.datainitialization.DataInt@180da663)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-ElopSuperAdmin_Automation" title="com.sa.testscripts.TestSuite" hash-for-method="SiteCreate(com.sa.datainitialization.DataInt@a43ce46)">SiteCreate(com.sa.datainitialization.DataInt@a43ce46)</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-ElopSuperAdmin_Automation -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-ElopSuperAdmin_Automation" class="panel ElopSuperAdmin_Automation">
+          <div class="suite-ElopSuperAdmin_Automation-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.sa.testscripts.TestSuite</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="Login(com.sa.datainitialization.DataInt@180da663)">
+                  </a> <!-- Login(com.sa.datainitialization.DataInt@180da663) -->
+                  <span class="method-name">Login</span>
+                  <span class="parameters">(com.sa.datainitialization.DataInt@180da663)</span>
+                  <em>
+(Login)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="SiteCreate(com.sa.datainitialization.DataInt@a43ce46)">
+                  </a> <!-- SiteCreate(com.sa.datainitialization.DataInt@a43ce46) -->
+                  <span class="method-name">SiteCreate</span>
+                  <span class="parameters">(com.sa.datainitialization.DataInt@a43ce46)</span>
+                  <em>
+(SitesCreate)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-ElopSuperAdmin_Automation-class-passed -->
+        </div> <!-- panel ElopSuperAdmin_Automation -->
+        <div panel-name="test-xml-ElopSuperAdmin_Automation" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">D:\ELOPSuperAdmin\SATestNG.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;3&quot; name=&quot;ElopSuperAdmin_Automation&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.sa.listeners.AnnotationTransformer&quot;/&gt;
+    &lt;listener class-name=&quot;com.sa.listeners.TestListener&quot;/&gt;
+    &lt;listener class-name=&quot;com.sa.listeners.ExtentReporterNG&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test name=&quot;ElopSuperAdmin_Automation&quot;&gt;
+    &lt;parameter name=&quot;browser&quot; value=&quot;chrome&quot;/&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.sa.testscripts.TestSuite&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;Login&quot;/&gt;
+          &lt;include name=&quot;SiteCreate&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- com.sa.testscripts.TestSuite --&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- ElopSuperAdmin_Automation --&gt;
+&lt;/suite&gt; &lt;!-- ElopSuperAdmin_Automation --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-ElopSuperAdmin_Automation" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for ElopSuperAdmin_Automation</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">ElopSuperAdmin_Automation (1 class)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-ElopSuperAdmin_Automation" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for ElopSuperAdmin_Automation</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-ElopSuperAdmin_Automation" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for ElopSuperAdmin_Automation</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_ElopSuperAdmin_Automation');
+function tableData_ElopSuperAdmin_Automation() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(2);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'SiteCreate')
+data.setCell(0, 2, 'com.sa.testscripts.TestSuite')
+data.setCell(0, 3, 27951);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'Login')
+data.setCell(1, 2, 'com.sa.testscripts.TestSuite')
+data.setCell(1, 3, 21240);
+window.suiteTableData['ElopSuperAdmin_Automation']= { tableData: data, tableDiv: 'times-div-ElopSuperAdmin_Automation'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 49 seconds</span>
+              <div id="times-div-ElopSuperAdmin_Automation">
+              </div> <!-- times-div-ElopSuperAdmin_Automation -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-ElopSuperAdmin_Automation" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for ElopSuperAdmin_Automation</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-ElopSuperAdmin_Automation" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">43 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="ignored-class-div">
+              <span class="ignored-class-name">com.sa.testscripts.TestSuite</span>
+              <div class="ignored-methods-div">
+                <span class="ignored-method-name">DailyAttendanceReport</span>
+                <br/>
+                <span class="ignored-method-name">Parents</span>
+                <br/>
+                <span class="ignored-method-name">CreatePendingPayment</span>
+                <br/>
+                <span class="ignored-method-name">AdmitStudent</span>
+                <br/>
+                <span class="ignored-method-name">SiteEdit</span>
+                <br/>
+                <span class="ignored-method-name">Voucheredit</span>
+                <br/>
+                <span class="ignored-method-name">AdminprofileSettings</span>
+                <br/>
+                <span class="ignored-method-name">CreateMenumeal</span>
+                <br/>
+                <span class="ignored-method-name">Vouchercreate</span>
+                <br/>
+                <span class="ignored-method-name">ChangeProgramorSiteLocations</span>
+                <br/>
+                <span class="ignored-method-name">CreateElopUser</span>
+                <br/>
+                <span class="ignored-method-name">siteuseredit</span>
+                <br/>
+                <span class="ignored-method-name">Students</span>
+                <br/>
+                <span class="ignored-method-name">SocialSettings</span>
+                <br/>
+                <span class="ignored-method-name">RevenueReport</span>
+                <br/>
+                <span class="ignored-method-name">Createsiteuser</span>
+                <br/>
+                <span class="ignored-method-name">AdminprofilePasswrod</span>
+                <br/>
+                <span class="ignored-method-name">CreatePage</span>
+                <br/>
+                <span class="ignored-method-name">ProgramParticipationReport</span>
+                <br/>
+                <span class="ignored-method-name">ExcessMealReport</span>
+                <br/>
+                <span class="ignored-method-name">PaymentorCreditReport</span>
+                <br/>
+                <span class="ignored-method-name">CreateMedicalCondition</span>
+                <br/>
+                <span class="ignored-method-name">CreateSteInfo</span>
+                <br/>
+                <span class="ignored-method-name">EditMenumeal</span>
+                <br/>
+                <span class="ignored-method-name">Programs</span>
+                <br/>
+                <span class="ignored-method-name">SitesDelete</span>
+                <br/>
+                <span class="ignored-method-name">PaymentHistory</span>
+                <br/>
+                <span class="ignored-method-name">CreateHeaderImage</span>
+                <br/>
+                <span class="ignored-method-name">CACFPCountReport</span>
+                <br/>
+                <span class="ignored-method-name">Homeaboutus</span>
+                <br/>
+                <span class="ignored-method-name">StudentAttendanceReport</span>
+                <br/>
+                <span class="ignored-method-name">ElopUserEdit</span>
+                <br/>
+                <span class="ignored-method-name">DisallowedMealReport</span>
+                <br/>
+                <span class="ignored-method-name">LateCheckoutReport</span>
+                <br/>
+                <span class="ignored-method-name">CreateTeam</span>
+                <br/>
+                <span class="ignored-method-name">EditMedicalCondition</span>
+                <br/>
+                <span class="ignored-method-name">AdminLogout</span>
+                <br/>
+                <span class="ignored-method-name">createbeverage</span>
+                <br/>
+                <span class="ignored-method-name">Voucherdelete</span>
+                <br/>
+                <span class="ignored-method-name">CreateNewsandEvents</span>
+                <br/>
+                <span class="ignored-method-name">editbeverage</span>
+                <br/>
+                <span class="ignored-method-name">CreateSiblingDiscount</span>
+                <br/>
+                <span class="ignored-method-name">CreateWeekOff</span>
+                <br/>
+              </div> <!-- ignored-methods-div -->
+            </div> <!-- ignored-class-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-ElopSuperAdmin_Automation" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.sa.testscripts.TestSuite</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">setUp(chrome)</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-test before -->
+              <div class="test-method">
+                <span class="method-name">Login(com.sa.datainitialization.DataInt@180da663)</span>
+                <span class="method-start">17648 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">SiteCreate(com.sa.datainitialization.DataInt@a43ce46)</span>
+                <span class="method-start">38890 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-test after">
+                <span class="method-name">close</span>
+                <span class="method-start">66846 ms</span>
+              </div> <!-- configuration-test after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>
