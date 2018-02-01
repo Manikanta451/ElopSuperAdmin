@@ -3,7 +3,6 @@ package com.sa.pagefactory;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
-
 import com.sa.pageobjects.StudentsPageObjects;
 
 public class Students extends StudentsPageObjects {
@@ -41,10 +40,7 @@ public class Students extends StudentsPageObjects {
 				UpdateStudent.click();
 				waitForSeconds(5);
 				StudentsExport.click();
-				
-				
-			
-		
+	
 	}
 
 }
