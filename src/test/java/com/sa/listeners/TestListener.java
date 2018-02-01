@@ -2,15 +2,18 @@ package com.sa.listeners;
 
 import java.io.File;
 import java.io.IOException;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+
 import com.sa.pagefactory.CommonBase;
 
 public class TestListener implements ITestListener {
@@ -18,7 +21,7 @@ public class TestListener implements ITestListener {
 	public String browserName;
 	public WebDriver driver;
 	public String failedscreens = System.getProperty("user.dir") + "_Failed_Screens";
-			
+	public String excep;
 
 	public void onTestFailure(ITestResult result) {
 
@@ -28,6 +31,8 @@ public class TestListener implements ITestListener {
 			takeScreenShot(methodName);
 			
 		    } catch (Exception e) {
+		    	excep=e.toString();
+		    	Assert.fail(excep);
 			e.printStackTrace();
 		}
 	}
@@ -46,7 +51,9 @@ public class TestListener implements ITestListener {
 			FileUtils.copyFile(scrFile, new File(failedscreens + File.separator + methodName + "_" + browsername() + ".png"));	
 			System.out.println("***Placed screen shot in " + failedscreens + " ***");		
 			} catch (IOException e) {
-			e.printStackTrace();
+				excep=e.toString();
+		    	Assert.fail(excep);
+		    	e.printStackTrace();
 		  }
 	}
 
