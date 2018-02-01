@@ -8,6 +8,7 @@ public class Retry implements IRetryAnalyzer {
 	int min=0;
 	int max=2;
 
+	
 	public boolean retry(ITestResult resilt) {
 
 		if (min<=max) {
