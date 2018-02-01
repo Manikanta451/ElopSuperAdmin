@@ -2,6 +2,13 @@ package com.sa.datainitialization;
 
 import java.io.Serializable;
 
+/**
+ * 
+ * 
+ * This Class is for the initialization of the data from the XLSX.
+ *
+ */
+
 public class DataInt implements Serializable {
 
 	
