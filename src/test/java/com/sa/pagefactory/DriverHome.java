@@ -4,6 +4,12 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import com.sa.utilities.PropertiesFileReader;
 
+/**
+ * 
+ * This Class is to initialize the all pages with using Pagefactory
+ * 
+ */
+
 public class DriverHome extends CommonBase {
 	
 	public static final String prod_url = PropertiesFileReader.readvalueOfKey("app.url");
