@@ -17,6 +17,7 @@ public class AccountLogOut extends AdminProfilePageObjects{
 			waitForSeconds(1);
 			AdminLogout.click();
 			
+			
 	}
 
 }
