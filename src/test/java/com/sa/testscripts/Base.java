@@ -1,10 +1,12 @@
 package com.sa.testscripts;
 
 import org.openqa.selenium.WebDriverException;
+import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
+
 
 
 
@@ -102,14 +104,16 @@ import com.sa.utilities.Xls_Reader;
 /**
  * 
  * 
- * This is the base class for all the test suites,It executes before executing
- * the TestSuite Classes
+ * This is the base class for all the test suites,It executes before executing the TestSuite Classes
+ * 
  * 
  */
 
 public class Base {
-
+	
+	public String excep;
 	public DriverHome driverhome;
+	
 	public Login login;
 	public CreateElopUser elopusercreate;
 	public EditElopUser editelopuser;
@@ -170,6 +174,8 @@ public class Base {
 			driverhome = new DriverHome(browser, "test");
 			
 		} catch (WebDriverException e) {
+			excep=e.toString();
+	    	Assert.fail(excep);
 			System.out.println(e);
 			
 		}
@@ -185,6 +191,8 @@ public class Base {
 			//driverhome.quitDriver();
 			Reporter.log("=====Browser Session End=========", true);
 		} catch (WebDriverException e) {
+			excep=e.toString();
+	    	Assert.fail(excep);
 			System.out.println(e); 
 
 		}
