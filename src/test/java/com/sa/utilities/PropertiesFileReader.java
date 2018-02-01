@@ -3,12 +3,13 @@ package com.sa.utilities;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
+import org.testng.Assert;
 
 /**
  * 
  * 
- * This Class is used to get the instance of properties from
- * application.properties file
+ * This Class is used to get the instance of properties from application.properties file
+ * 
  * 
  * 
  */
@@ -18,6 +19,7 @@ public class PropertiesFileReader {
 	private static PropertiesFileReader INSTANCE = null;
 	static Properties properties = new Properties();
 	private static final String PROP_FILE= "application.properties";
+	public static String excep;
 	
 	
 	static InputStream in,input = null;
@@ -27,7 +29,9 @@ public class PropertiesFileReader {
 		    in = PropertiesFileReader.class.getResourceAsStream("/resources/"+PROP_FILE);
 			properties.load(in);
 		   }catch (IOException e) {
-			e.printStackTrace();
+			   excep=e.toString();
+			   Assert.fail(excep);
+			   e.printStackTrace();
 		}	
 	}
 	private PropertiesFileReader(){
@@ -49,7 +53,9 @@ public class PropertiesFileReader {
 			properties.load(in);
 			}
 		} catch (IOException e) {
-			e.printStackTrace();
+			 excep=e.toString();
+			 Assert.fail(excep);
+			 e.printStackTrace();
 		}
 		return properties;
 	}
