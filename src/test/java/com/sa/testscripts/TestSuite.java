@@ -2,6 +2,7 @@ package com.sa.testscripts;
 
 import java.util.Iterator;
 import org.apache.log4j.Logger;
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.sa.pageobjects.ExcelSheetObjects;
@@ -10,13 +11,19 @@ import com.sa.datainitialization.DataInt;
 import com.sa.utilities.Util;
 import com.sa.utilities.Xls_Reader;
 
-
+/**
+ * 
+ * 
+ * This is the Main Class for the Execution of the ELOP Super Admin test cases. 
+ *
+ */
 
 public class TestSuite extends Base {
 	
 	public static final Logger LOG = Logger.getLogger(TestSuite.class);
 	String testDataPath = System.getProperty("user.dir")+ "\\src\\main\\java\\com\\sa\\test\\data\\TestData.xlsx";
 	public Xls_Reader xls = new Xls_Reader(testDataPath);
+	public String excep;
     
 
 	@Test(description = "Login", dataProvider = "getLogin", priority = 1)
@@ -27,6 +34,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.LoginWithValidCredentials, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.LoginWithValidCredentials, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -40,6 +49,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.CreateElopUserWithValidData, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.CreateElopUserWithValidData, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -53,6 +64,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.EditElopUserWithValidData, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.EditElopUserWithValidData, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -66,6 +79,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.CreateSiteWithValidData, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.CreateSiteWithValidData, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -79,6 +94,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.EditsiteWithValidData, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.EditsiteWithValidData, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -92,6 +109,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.DeletingSite, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.DeletingSite, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -105,6 +124,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.CreateSiteUserWithValidData, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.CreateSiteUserWithValidData, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -118,6 +139,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.EditSiteUserWithValidData, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.EditSiteUserWithValidData, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -131,6 +154,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.Parents, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.Parents, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -144,6 +169,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.Students, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.Students, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -157,6 +184,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.AdmitStudent, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.AdmitStudent, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -170,6 +199,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.ChangeProgramorSite, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.ChangeProgramorSite, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -183,6 +214,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.CreateDHSWithValidData, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.CreateDHSWithValidData, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -196,6 +229,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.EditDHSWithValidData, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.EditDHSWithValidData, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -209,6 +244,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.DeleteDHS, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.DeleteDHS, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -223,6 +260,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.PaymentHistory, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.PaymentHistory, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -236,6 +275,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.CreatePendingPayment, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.CreatePendingPayment, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -249,6 +290,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.CreateSIblingDIscount, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.CreateSIblingDIscount, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -262,6 +305,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.CreateMedicalCondition, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.CreateMedicalCondition, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -275,6 +320,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.EditMedicalCondition, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.EditMedicalCondition, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -288,6 +335,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.CreateMenuMeal, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.CreateMenuMeal, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -301,6 +350,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.EditMenuMeal, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.EditMenuMeal, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -314,6 +365,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.CreateBeverage, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.CreateBeverage, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -327,6 +380,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.EditBeverage, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.EditBeverage, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -340,6 +395,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.CreateWeekoff, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.CreateWeekoff, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -353,6 +410,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.CreateSiteInfo, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.CreateSiteInfo, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -366,6 +425,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.Programs, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.Programs, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -380,6 +441,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.LateCheckoutReport, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.LateCheckoutReport, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -393,6 +456,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.ExcessMealReport, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.ExcessMealReport, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -406,6 +471,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.DisallowedMealReport, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.DisallowedMealReport, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -419,6 +486,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.CACFPCountReport, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.CACFPCountReport, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -432,6 +501,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.RevenueReport, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.RevenueReport, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -445,6 +516,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.StudentAttendanceReport, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.StudentAttendanceReport, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -458,6 +531,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.DailyAttendanceReport, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.DailyAttendanceReport, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -471,6 +546,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.ProgramParticipationReport, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.ProgramParticipationReport, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -484,6 +561,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.PaymentorCreditReport, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.PaymentorCreditReport, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -497,6 +576,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.CreateHeaderImage, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.CreateHeaderImage, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -510,6 +591,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.CreatePage, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.CreatePage, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -523,6 +606,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.CreateNewsandEvents, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.CreateNewsandEvents, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}
 					
@@ -536,6 +621,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.CreateTeam, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.CreateTeam, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}				
 	}
@@ -548,6 +635,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.HomeAboutUs, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.HomeAboutUs, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}				
 	}
@@ -560,6 +649,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.SocialSettings, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.SocialSettings, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}				
 	}
@@ -572,6 +663,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.AdminProfile, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.AdminProfile, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}				
 	}
@@ -584,6 +677,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.ChangePassword, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.ChangePassword, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}				
 	}
@@ -596,6 +691,8 @@ public class TestSuite extends Base {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.Logout, "TestCases");
 		} catch (Exception e) {
 			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.Logout, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
 			e.printStackTrace();
 		}				
 	}
