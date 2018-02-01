@@ -5,9 +5,16 @@ import java.util.ArrayList;
 import com.sa.pageobjects.ExcelSheetObjects;
 import com.sa.utilities.Xls_Reader;
 
+/**
+ * 
+ * 
+ * This class for update all the test cases and test scenario ,It executes along with 
+ * the TestSuite Classes
+ * 
+ */
 
-public class SetupEnvironment 
-{
+public class SetupEnvironment {
+
 	//Constant to read excel suite.xlsx file during execution process 
 	public static Xls_Reader Wb;
 	public static int currentSuiteID;
