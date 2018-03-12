@@ -13,11 +13,11 @@ public class ParentsPageObjects extends CommonBase{
 		super(driver);
 		
 	}
-	
-	@FindBy(how = How.XPATH,using = "/html/body/div[3]/div[1]/div/ul/li[8]/a")
+									 
+	@FindBy(how = How.XPATH,using = "/html/body/div[3]/div[1]/div/ul/li[8]/a/span")
 	public static WebElement Parents;
 	
-	@FindBy(how = How.XPATH,using = "/html/body/div[3]/div[4]/div/div/div/div/div[2]/div/div/div/div/div/table/tbody/tr[1]/td[9]/a[1]")
+	@FindBy(how = How.CLASS_NAME,using = "Iconedit")
 	public static WebElement EditParent;
 	
 	@FindBy(how = How.XPATH,using = "/html/body/div[3]/div[4]/div/div/div/form/div/div/div[2]/ul/li[2]/a)")
@@ -29,4 +29,5 @@ public class ParentsPageObjects extends CommonBase{
 	@FindBy(how = How.XPATH,using = "/html/body/div[3]/div[4]/div/div/div/div/div[2]/div/div/div/div/div/div[1]/a/div/embed")
 	public static WebElement PareentsExport;
 
+	
 }

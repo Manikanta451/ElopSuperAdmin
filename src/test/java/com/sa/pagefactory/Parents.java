@@ -1,6 +1,11 @@
 package com.sa.pagefactory;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
 import com.sa.pageobjects.ParentsPageObjects;
 
 public class Parents extends ParentsPageObjects {
@@ -15,17 +20,38 @@ public class Parents extends ParentsPageObjects {
 		        waitForSeconds(5);
 		        Parents.click();
 		        waitForSeconds(8);
-		        EditParent.click();
+		        webtablehandle();
+		       /* EditParent.click();
 		        waitForSeconds(5);
 		        StudentsList.click();
 		        waitForSeconds(3);
 		        BacktoList.click();
 		        waitForSeconds(8);
-		        PareentsExport.click();
+		        PareentsExport.click();*/
 		        
 		        
 	}
 
+	public void webtablehandle()throws Exception{
+		
+				WebElement mytable = driver.findElement(By.id("Sample_parentlist"));
+				List < WebElement > rows_table = mytable.findElements(By.tagName("tr"));
+				int rows_count = rows_table.size();
+				for (int row = 0; row < rows_count; row++) {
+				List < WebElement > Columns_row = rows_table.get(row).findElements(By.tagName("td"));
+    	        int columns_count = Columns_row.size();
+    	        //System.out.println("Number of cells In Row " + row + " are " + columns_count);
+    	        for (int column = 0; column < columns_count; column++) {
+    	       // String celtext = Columns_row.get(column).getText();
+    	        //System.out.println("Cell Value of row number " + row + " and column number " + column + " Is " + celtext);
+    	        	
+    	        }
+    	        if(row==1 && columns_count==7){
+    	        	EditParent.click();
+    	        }
+    	}
+	}
+	
 	
 	
 	
