@@ -14,11 +14,13 @@
 			<class name="com.sa.testscripts.TestSuite">
 				<methods>
 				    <include name="Login"></include>
-				    <include name="SiteEdit"></include>
+				    <include name="Parents"></include>
+				    
+				   
 				</methods>
 			</class>
 		</classes>
-	</test>
+	</test>	
 	<listeners>
 	    <listener class-name="com.sa.listeners.AnnotationTransformer"></listener>
        <listener class-name="com.sa.listeners.TestListener"/>
