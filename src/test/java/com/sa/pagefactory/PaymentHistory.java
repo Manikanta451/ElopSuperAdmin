@@ -1,5 +1,8 @@
 package com.sa.pagefactory;
 
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,8 +15,8 @@ public class PaymentHistory extends CommonBase{
 		super(driver);
 		
 	}
-	
-	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[1]/div/ul/li[11]/a/span")
+										
+	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[1]/div/ul/li[13]/a/span")
 	public static WebElement paymenthistory;
 	
 	@FindBy(how = How.ID, using = "PaymentTypeId")
@@ -40,10 +43,24 @@ public class PaymentHistory extends CommonBase{
 	public void exporttoexcelpaymentrecords() throws Exception{
 		
 				waitForSeconds(6);
-				if (export.isEnabled()) {
+				if (export.isDisplayed()) {
 					export.click();
+					saveexportexcelfile();
 				}
 	
+	}
+	
+	public void saveexportexcelfile() throws Exception{
+		
+				waitForSeconds(2);
+				Robot robot = new Robot();
+				robot.keyPress(KeyEvent.VK_ENTER);
+				robot.keyRelease(KeyEvent.VK_ENTER);
+				robot.keyPress(KeyEvent.VK_ENTER);
+				robot.keyRelease(KeyEvent.VK_ENTER);
+				robot.keyPress(KeyEvent.VK_ENTER);
+				robot.keyRelease(KeyEvent.VK_ENTER);
+
 	}
 
 }

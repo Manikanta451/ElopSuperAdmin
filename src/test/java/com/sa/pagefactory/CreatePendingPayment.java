@@ -13,8 +13,8 @@ public class CreatePendingPayment  extends CommonBase{
 		super(driver);
 	}
 
-	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[1]/div/ul/li[12]/a/span")
-	public static WebElement creatependingpayment;
+	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[1]/div/ul/li[14]/a/span")
+	public static WebElement pendingpayment;
 	
 	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[4]/div/form/div/div/div/div[2]/div/div/div/div/div[1]/a")
 	public static WebElement createnewpayment;
@@ -50,7 +50,7 @@ public class CreatePendingPayment  extends CommonBase{
 	public void creatingpayments(DataInt dataInt)throws Exception{
 		
 					waitForSeconds(5);
-					creatependingpayment.click();
+					pendingpayment.click();
 					waitForSeconds(5);
 					createnewpayment.click();
 					waitForSeconds(3);
@@ -66,7 +66,7 @@ public class CreatePendingPayment  extends CommonBase{
 					waitForSeconds(1);
 					WeeklyEndDate.click();
 					waitForSeconds(1);
-					futuredateselection();
+					expiryDate();
 					waitForSeconds(1);
 					WeeklyFee.sendKeys(dataInt.getWeeklyFee());
 					LateFee.sendKeys(dataInt.getLateFee());

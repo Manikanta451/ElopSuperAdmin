@@ -12,8 +12,8 @@ public class CreateSiblingDiscount extends CommonBase {
 	public CreateSiblingDiscount(WebDriver driver) {
 		super(driver);
 	}
-	
-	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[1]/div/ul/li[13]/a/span")
+									   
+	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[1]/div/ul/li[15]/a")
 	public static WebElement Siblingdiscount;
 	
 	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[4]/div/form/div/div/div/div[2]/div/div/div/div/p/a")
@@ -25,7 +25,10 @@ public class CreateSiblingDiscount extends CommonBase {
 	@FindBy(how = How.ID, using = "StudentFormId")
 	public static WebElement StudentFormId;
 	
-	@FindBy(how = How.ID ,using = "Siblingdiscount")
+	@FindBy(how = How.ID, using = "Siblingdiscount")
+	public static WebElement Siblingamount;
+	
+	@FindBy(how = How.ID ,using = "Submit")
 	public static WebElement Siblingdiscountadd;
 	
 	public void Siblingdiscount(DataInt dataInt)throws Exception{
@@ -41,7 +44,7 @@ public class CreateSiblingDiscount extends CommonBase {
 				Select students = new Select(StudentFormId);
 				students.selectByVisibleText(dataInt.getStudent());
 				waitForSeconds(1);
-				Siblingdiscount.sendKeys(dataInt.getSiblingDiscount());
+				Siblingamount.sendKeys(dataInt.getSiblingDiscount());
 				waitForSeconds(1);
 				//Siblingdiscountadd.click();
 				

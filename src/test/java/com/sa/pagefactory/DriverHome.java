@@ -2,6 +2,8 @@ package com.sa.pagefactory;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
+
+import com.gargoylesoftware.htmlunit.Page;
 import com.sa.utilities.PropertiesFileReader;
 
 /**
@@ -144,8 +146,23 @@ public class DriverHome extends CommonBase {
 		
 	}
 	
+	public EditCashPayment getupdatebycash(){
+		return PageFactory.initElements(driver, EditCashPayment.class);
+		
+	}
+	
 	public CreateSiblingDiscount getsiblingdiscount(){
 		return PageFactory.initElements(driver, CreateSiblingDiscount.class);
+		
+	}
+	
+	public EditSiblingDiscount getupdatesibling(){
+		return PageFactory.initElements(driver, EditSiblingDiscount.class);
+		
+	}
+	
+	public DisableSiblingDiscount getdisablesibling(){
+		return PageFactory.initElements(driver, DisableSiblingDiscount.class);
 		
 	}
 	
@@ -164,6 +181,11 @@ public class DriverHome extends CommonBase {
 		
 	}
 	
+	public DisableMedicalCondition getdisablemedical(){
+		return PageFactory.initElements(driver, DisableMedicalCondition.class);
+		
+	}
+	
 	public CreateMenuMeal getmenumeal(){
 		return PageFactory.initElements(driver, CreateMenuMeal.class);
 		
@@ -171,6 +193,16 @@ public class DriverHome extends CommonBase {
 	
 	public EditMenuMeal geteditmeal(){
 		return PageFactory.initElements(driver, EditMenuMeal.class);
+		
+	}
+	
+	public DisableMenuMeal getdisablemeal(){
+		return PageFactory.initElements(driver, DisableMenuMeal.class);
+		
+	}
+	
+	public DeleteMenuMeal getmealdelete(){
+		return PageFactory.initElements(driver, DeleteMenuMeal.class);
 		
 	}
 	
@@ -184,9 +216,23 @@ public class DriverHome extends CommonBase {
 		
 	}
 	
+	public DisableBeverage getdisablebev(){
+		return PageFactory.initElements(driver, DisableBeverage.class);
+		
+	}
+	
+	public DeleteBeverage getdelbev(){
+		return PageFactory.initElements(driver, DeleteBeverage.class);
+		
+	}
+	
 	public CreateWeekOff getweekoff(){
 		return PageFactory.initElements(driver, CreateWeekOff.class);
 		
+	}
+	
+	public CreateResourceVideoorDocument getresource(){
+		return PageFactory.initElements(driver, CreateResourceVideoorDocument.class);
 	}
 	
 	public CreateSiteInfo getsiteinfo(){

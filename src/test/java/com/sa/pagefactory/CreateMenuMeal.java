@@ -12,7 +12,7 @@ public class CreateMenuMeal extends CommonBase{
 		
 	}
 	
-	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[1]/div/ul/li[15]/a/span")
+	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[1]/div/ul/li[17]/a")
 	public static WebElement menumeal;
 	
 	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[4]/div/div/div/div/div[2]/div[1]/div/div/div/a")
@@ -37,7 +37,7 @@ public class CreateMenuMeal extends CommonBase{
 				mealitem.sendKeys("Green Apple");
 				isactive(IsActive);
 				waitForSeconds(1);
-				submitmenumeal.click();
+				//submitmenumeal.click();
 	}
 	
 	public void isactive(WebElement element)throws Exception {

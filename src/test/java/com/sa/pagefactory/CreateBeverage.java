@@ -12,7 +12,7 @@ public class CreateBeverage extends CommonBase{
 		
 	}
 	
-	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[1]/div/ul/li[16]/a/span")
+	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[1]/div/ul/li[18]/a")
 	public static WebElement beverageclick;
 	
 	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[4]/div/div/div/div/div[2]/div[1]/div/div/div/a")
@@ -29,15 +29,15 @@ public class CreateBeverage extends CommonBase{
 
 	public void beverage()throws Exception{
 		
-				waitForSeconds(5);
+				waitForSeconds(3);
 				beverageclick.click();
-				waitForSeconds(4);
+				waitForSeconds(3);
 				createnewbeverage.click();
 				waitForSeconds(3);
 				Beverage.sendKeys("Pure Milk");
 				waitForSeconds(1);
 				isactive(active);
-				addbeverage.click();
+				//addbeverage.click();
 	}
 	
 	public void isactive(WebElement element)throws Exception {

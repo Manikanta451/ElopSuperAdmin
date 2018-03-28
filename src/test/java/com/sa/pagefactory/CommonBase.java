@@ -207,7 +207,12 @@ public class CommonBase {
 						// Set logging preference In Google Chrome browser capability to log browser errors.
 						LoggingPreferences pref = new LoggingPreferences();
 						pref.enable(LogType.BROWSER, Level.ALL);
-						Map<String, Object> prefs = new HashMap<String, Object>();				
+						Map<String, Object> prefs = new HashMap<String, Object>();	
+						prefs.put("profile.default_content_setting_values.plugins", 1);
+						prefs.put("profile.content_settings.plugin_whitelist.adobe-flash-player", 1);
+						prefs.put("profile.content_settings.exceptions.plugins.*,*.per_resource.adobe-flash-player", 1);
+						    // Enable Flash for this site
+						prefs.put("PluginsAllowedForUrls", "http://elop.thinkebiznow.com");						   
 						prefs.put("profile.default_content_settings.popups", 0);
 						prefs.put("profile.default_content_setting_values.notifications", 2);
 						prefs.put("credentials_enable_service", false);
@@ -580,7 +585,7 @@ public class CommonBase {
 				
 				
 				public static void emailreport() throws Exception{		 
-					 sendPDFReportByGMail("seleniumautomatonreports@gmail.com", "1111111!", "mani6747@gmail.com", "Elop Automation Report", "");
+					 sendPDFReportByGMail("seleniumautomatonreports@gmail.com", "1111111!", "mani6747@gmail.com", "Elop Super Admin Automation Report", "");
 				 }	 
 				  
 				
@@ -626,8 +631,8 @@ public class CommonBase {
 						 multipart.addBodyPart(objMessageBodyPart);
 						 objMessageBodyPart = new MimeBodyPart();
 						 addAttachment(multipart, reportpath1);
-						 //addAttachment(multipart, reportpath2);
-						// addAttachment(multipart, reportpath3);
+						 addAttachment(multipart, reportpath2);
+						 addAttachment(multipart, reportpath3);
 						 message.setContent(multipart);
 						 Transport transport = session.getTransport("smtp");
 						 transport.connect(host, from, pass);
@@ -846,11 +851,11 @@ public class CommonBase {
 									DateFormat dateformat = new SimpleDateFormat("d"); //date format
 						            Date date = new Date();					
 						            String today = dateformat.format(date); 
-						            System.out.println("Today is :"+today);
+						            //System.out.println("Today is :"+today);
 						            int dateselectfuture=Integer.parseInt(today);
 						            int future=dateselectfuture + 4;
 						            String futuredate=String.valueOf(future);	
-						            System.out.println("Featrue date is :"+futuredate);
+						            //System.out.println("Featrue date is :"+futuredate);
 
 						            WebElement dateWidget = driver.findElement(By.id("ui-datepicker-div")); //find the calendar
 						            List<WebElement> columns=dateWidget.findElements(By.tagName("td"));  
@@ -895,8 +900,8 @@ public class CommonBase {
 					try {
 						  dateNotFound = true;						 
 						  //Set your expected date, month and year.  
-						  expDate = "21";
-						  expMonth= 8;
+						  expDate = "8";
+						  expMonth= 4;
 						  expYear = 2018;
 						  
 						  //This loop will be executed continuously till dateNotFound Is true.

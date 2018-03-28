@@ -11,8 +11,8 @@ public class CreateMedicalCondition extends CommonBase {
 	public CreateMedicalCondition(WebDriver driver) {
 		super(driver);
 	}
-	
-	@FindBy(how = How.XPATH,using = "/html/body/div[3]/div[1]/div/ul/li[14]/a/span")
+	                                  
+	@FindBy(how = How.XPATH,using = "/html/body/div[3]/div[1]/div/ul/li[16]/a")
 	public static WebElement medical;
 	
 	@FindBy(how = How.XPATH,using = "/html/body/div[3]/div[4]/div/div/div/div/div[2]/div[1]/div/div/div/a")
@@ -39,7 +39,7 @@ public class CreateMedicalCondition extends CommonBase {
 				waitForSeconds(1);
 				medicalactive.click();
 				waitForSeconds(1);
-				medicaladd.click();
+				//medicaladd.click();
 		
 	}
 
