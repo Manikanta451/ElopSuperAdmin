@@ -2,15 +2,21 @@ package com.sa.pagefactory;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
-import com.sa.pageobjects.MedicalConditionPageObjects;
-
-public class EditMedicalCondition extends MedicalConditionPageObjects{
+public class EditMedicalCondition extends CreateMedicalCondition{
 
 	public EditMedicalCondition(WebDriver driver) {
 		super(driver);
 	}
 
+	@FindBy(how = How.XPATH,using = "/html/body/div[3]/div[4]/div/div/div/div/div[2]/div[2]/div[2]/table/tbody/tr[1]/td[4]/a")
+	public static WebElement medicaledit;
+	
+	@FindBy(how = How.XPATH,using = "/html/body/div[3]/div[4]/div/div/div/form/div/div/div[2]/div/div/div/div[3]/div/input")
+	public static WebElement medicalupdate;
+	
 	
 	public void editmedical()throws Exception{
 		

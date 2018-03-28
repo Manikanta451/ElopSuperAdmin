@@ -7,54 +7,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import com.sa.pagefactory.AdminProfile;
 import com.sa.pagefactory.AdmitStudent;
+import com.sa.pagefactory.ApprovePaymentorCredit;
 import com.sa.pagefactory.CACFPCountReport;
 import com.sa.pagefactory.ChangePassword;
 import com.sa.pagefactory.ChangeProgramorSite;
@@ -75,7 +30,9 @@ import com.sa.pagefactory.CreateTeam;
 import com.sa.pagefactory.CreateWeekOff;
 import com.sa.pagefactory.DailyAttendanceReport;
 import com.sa.pagefactory.DeleteDHSVoucher;
+import com.sa.pagefactory.DeleteELOPUser;
 import com.sa.pagefactory.DeleteSite;
+import com.sa.pagefactory.DeleteSiteUser;
 import com.sa.pagefactory.DisallowedMealReport;
 import com.sa.pagefactory.DriverHome;
 import com.sa.pagefactory.EditBeverage;
@@ -85,17 +42,19 @@ import com.sa.pagefactory.EditMedicalCondition;
 import com.sa.pagefactory.EditMenuMeal;
 import com.sa.pagefactory.EditSite;
 import com.sa.pagefactory.EditSiteUser;
+import com.sa.pagefactory.ElopUserResetPassword;
 import com.sa.pagefactory.ExcessMealReport;
 import com.sa.pagefactory.HomeAboutUs;
 import com.sa.pagefactory.LateCheckoutReport;
-import com.sa.pagefactory.Login;
-import com.sa.pagefactory.Logout;
+import com.sa.pagefactory.Login;import com.sa.pagefactory.ParentInActive;
+import com.sa.pagefactory.ParentResetPassword;
 import com.sa.pagefactory.Parents;
 import com.sa.pagefactory.PaymentHistory;
 import com.sa.pagefactory.PaymentorCreditReport;
 import com.sa.pagefactory.ProgramParticipationReport;
 import com.sa.pagefactory.Programs;
 import com.sa.pagefactory.RevenueReport;
+import com.sa.pagefactory.SiteUserResetPassword;
 import com.sa.pagefactory.SocialSettings;
 import com.sa.pagefactory.StudentAttendanceReport;
 import com.sa.pagefactory.Students;
@@ -113,16 +72,22 @@ public class Base {
 	
 	public String excep;
 	public DriverHome driverhome;
-	
 	public Login login;
 	public CreateElopUser elopusercreate;
 	public EditElopUser editelopuser;
+	public DeleteELOPUser delelopuser;
+	public ElopUserResetPassword reset;
+	public ApprovePaymentorCredit approve;
 	public CreateSite createsite;
 	public EditSite siteedit;
 	public DeleteSite sitedelete;
 	public CreateSiteUser siteuser;
 	public EditSiteUser siteuseredit;
+	public DeleteSiteUser delsiteuser;
+	public SiteUserResetPassword resetsiteuser;
 	public Parents parent;
+	public ParentInActive inactive;
+	public ParentResetPassword resetpasswordparent;
 	public Students student;
 	public AdmitStudent admit;
 	public ChangeProgramorSite progrmsite;
@@ -158,7 +123,7 @@ public class Base {
 	public SocialSettings social;
 	public AdminProfile  profile;
 	public ChangePassword profilepswd;
-	public Logout signout;
+	;
 	
 	
 	public static String passMessage = null;

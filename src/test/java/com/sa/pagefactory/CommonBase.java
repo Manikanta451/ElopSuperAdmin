@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -112,6 +113,17 @@ public class CommonBase {
 	public String Testcase;
 	public WritableSheet writablesh;
 	public WritableWorkbook workbookcopy;
+	List<WebElement> noOfColumns;
+	List<String> monthList = Arrays.asList("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+	// Expected Date, Month and Year
+	int expMonth;
+	int expYear;
+	String expDate = null;
+	// Calendar Month and Year
+    String calMonth = null;
+    String calYear = null;
+    boolean dateNotFound;
+
 	
 	// CommonBase File
 	
@@ -834,11 +846,15 @@ public class CommonBase {
 									DateFormat dateformat = new SimpleDateFormat("d"); //date format
 						            Date date = new Date();					
 						            String today = dateformat.format(date); 
+						            System.out.println("Today is :"+today);
 						            int dateselectfuture=Integer.parseInt(today);
-						            int future=dateselectfuture + 7;
-						            String futuredate=String.valueOf(future);
+						            int future=dateselectfuture + 4;
+						            String futuredate=String.valueOf(future);	
+						            System.out.println("Featrue date is :"+futuredate);
+
 						            WebElement dateWidget = driver.findElement(By.id("ui-datepicker-div")); //find the calendar
 						            List<WebElement> columns=dateWidget.findElements(By.tagName("td"));  
+						            System.out.println(columns);
 						            //comparing the text of cell with today's date and clicking it.
 						            for (WebElement cell : columns)
 						            {
@@ -872,6 +888,67 @@ public class CommonBase {
 								return randomnumber;
 								
 						     
-					  }	 
+					  }
+				
+				public void expiryDate() throws InterruptedException{
+					
+					try {
+						  dateNotFound = true;						 
+						  //Set your expected date, month and year.  
+						  expDate = "21";
+						  expMonth= 8;
+						  expYear = 2018;
+						  
+						  //This loop will be executed continuously till dateNotFound Is true.
+						  while(dateNotFound){
+						   //Retrieve current selected month name from date picker popup.
+						   calMonth = driver.findElement(By.className("ui-datepicker-month")).getText();
+						   System.out.println(calMonth);
+						   //Retrieve current selected year name from date picker popup.
+						   calYear = driver.findElement(By.className("ui-datepicker-year")).getText();
+						   System.out.println(calYear);
+						   //If current selected month and year are same as expected month and year then go Inside this condition.
+						   if(monthList.indexOf(calMonth)+1 == expMonth && (expYear == Integer.parseInt(calYear))){						   
+						    //Call selectDate function with date to select and set dateNotFound flag to false.
+						    selectDate(expDate);
+						    dateNotFound = false;
+						    }
+						   //If current selected month and year are less than expected month and year then go Inside this condition.
+						   else if(monthList.indexOf(calMonth)+1 < expMonth && (expYear == Integer.parseInt(calYear)) || expYear > Integer.parseInt(calYear))
+						   {
+						    //Click on next button of date picker.
+						    driver.findElement(By.xpath(".//*[@id='ui-datepicker-div']/div/a[2]/span")).click();
+						   }
+						   //If current selected month and year are greater than expected month and year then go Inside this condition.
+						   else if(monthList.indexOf(calMonth)+1 > expMonth && (expYear == Integer.parseInt(calYear)) || expYear < Integer.parseInt(calYear))
+						   {
+						    //Click on previous button of date picker.
+						    driver.findElement(By.xpath(".//*[@id='ui-datepicker-div']/div/a[1]/span")).click();
+						   }
+						  }
+						  
+					} catch (Exception e) {
+						    e.printStackTrace();
+						}
+					 } 
+					 
+				public void selectDate(String date){
+					 WebElement datePicker = driver.findElement(By.id("ui-datepicker-div")); 
+					  noOfColumns=datePicker.findElements(By.tagName("td"));
+
+					  //Loop will rotate till expected date not found.
+					  for (WebElement cell: noOfColumns){
+					   //Select the date from date picker when condition match.
+					   if (cell.getText().equals(date)){
+					    cell.findElement(By.linkText(date)).click();
+					    break;
+					   }
+					  }
+					 } 		
+				
+				
+				
+				
+				
 						 
 			}

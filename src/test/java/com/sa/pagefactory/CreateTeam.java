@@ -1,17 +1,50 @@
 package com.sa.pagefactory;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import com.sa.datainitialization.DataInt;
-import com.sa.pageobjects.ContentManagementPageObjects;
 
-public class CreateTeam extends ContentManagementPageObjects{
+public class CreateTeam extends CommonBase{
 
 	public CreateTeam(WebDriver driver) {
 		super(driver);
 		
 	}
 
+	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[1]/div/ul/li[22]/a/span[1]")	  
+	public  static WebElement contentmanagementclick;
+	
+	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[1]/div/ul/li[22]/ul/li[4]/a/span")	  
+	public  static WebElement aboutustreamclick;
+	
+	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[4]/div/div/div/div/div[2]/div/div/div[1]/div/div/div/a")	  
+	public  static WebElement aboutustreamcreate;
+	
+	@FindBy(how = How.ID, using = "Name")	  
+	public  static WebElement TeamName;
+	
+	@FindBy(how = How.ID, using = "Desgination")	  
+	public  static WebElement Desgination;
+	
+	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[4]/div/form/div[1]/div[3]/div/div")	  
+	public  static WebElement Teamdescription;
+	
+	@FindBy(how = How.ID, using = "choose")	  
+	public  static WebElement teamiamgeupload;
+	
+	@FindBy(how = How.ID, using = "AltTag")	  
+	public  static WebElement TeamAltTag;
+	
+	@FindBy(how = How.ID, using = "DisplayOrder")	  
+	public  static WebElement TeamDisplayOrder;
+	
+	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[4]/div/form/div[1]/div[7]/div/input")	  
+	public  static WebElement teamSubmit;
+	
+	
 	public void team(DataInt dataInt)throws Exception{
 		
 				waitForSeconds(5);

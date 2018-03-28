@@ -2,14 +2,30 @@ package com.sa.pagefactory;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import com.sa.pageobjects.MenuMealPageObjects;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 
-public class CreateMenuMeal extends MenuMealPageObjects{
+public class CreateMenuMeal extends CommonBase{
 
 	public CreateMenuMeal(WebDriver driver) {
 		super(driver);
 		
 	}
+	
+	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[1]/div/ul/li[15]/a/span")
+	public static WebElement menumeal;
+	
+	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[4]/div/div/div/div/div[2]/div[1]/div/div/div/a")
+	public static WebElement createmenumeal;
+	
+	@FindBy(how = How.ID, using = "Name")
+	public static WebElement mealitem;
+	
+	@FindBy(how = How.ID, using = "IsActive")
+	public static WebElement IsActive;
+	
+	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[4]/div/form/div/div/div/div[2]/div/div/div[3]/div/input")
+	public static WebElement submitmenumeal;
 
 	public void menumealadd()throws Exception{
 		

@@ -1,17 +1,61 @@
 package com.sa.pagefactory;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import com.sa.datainitialization.DataInt;
-import com.sa.pageobjects.ContentManagementPageObjects;
 
-public class CreateNewsandEvents extends ContentManagementPageObjects{
+public class CreateNewsandEvents extends CommonBase{
 
 	public CreateNewsandEvents(WebDriver driver) {
 		super(driver);
 		
 	}
+	
+	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[1]/div/ul/li[22]/a/span[1]")	  
+	public  static WebElement contentmanagementclick;
+	
+	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[1]/div/ul/li[22]/ul/li[3]/a")	  
+	public  static WebElement newsandeventsclick;
+	
+	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[4]/div/div/div/div/div[2]/div[1]/div/div/div/a")	  
+	public  static WebElement newsandeventscreate;
+	
+	@FindBy(how = How.ID, using = "Title")	  
+	public  static WebElement NewsTitle;
+	
+	@FindBy(how = How.ID, using = "ShortDescription")	  
+	public  static WebElement NewsShortDescription;
+	
+	@FindBy(how = How.XPATH, using = "/html/body/div[3]/div[4]/div/div/div/form/div/div/div[2]/div/div/div/div[3]/div/div")	  
+	public  static WebElement Newsdescription;
+	
+	@FindBy(how = How.ID, using = "choose")	  
+	public  static WebElement newsimageupload;
+	
+	@FindBy(how = How.ID, using = "ImageAltTag")	  
+	public  static WebElement NewsImageAltTag;
+	
+	@FindBy(how = How.ID, using = "Postdate")	  
+	public  static WebElement Postdate;
+	
+	@FindBy(how = How.ID, using = "Active")	  
+	public  static WebElement newsActive;
+	
+	@FindBy(how = How.ID, using = "MetaTitle")	  
+	public  static WebElement NewsMetaTitle;
+	
+	@FindBy(how = How.ID, using = "Metakeywords")	  
+	public  static WebElement NewsMetakeywords;
+	
+	@FindBy(how = How.ID, using = "Metadescription")	  
+	public  static WebElement NewsMetadescription;
+	
+	@FindBy(how = How.ID, using = "headerSubmit")	  
+	public  static WebElement newsSubmit;
+	
 
 	public void newsevents(DataInt dataInt)throws Exception{
 		

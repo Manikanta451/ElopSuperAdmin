@@ -5,8 +5,7 @@ import org.apache.log4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import com.sa.pageobjects.ExcelSheetObjects;
-import com.sa.testscripts.SetupEnvironment;
+import com.sa.testscripts.ExcelSheetObjects;import com.sa.testscripts.SetupEnvironment;
 import com.sa.datainitialization.DataInt;
 import com.sa.utilities.Util;
 import com.sa.utilities.Xls_Reader;
@@ -71,7 +70,52 @@ public class TestSuite extends Base {
 					
 	}
 	
-	@Test(description = "SitesCreate", dataProvider = "getSite", priority = 4)
+	@Test(description = "ElopUserDelete", priority = 4)
+	public void DeleteElopUser() throws Exception {
+		try {
+			delelopuser=driverhome.getdelDeleteELOPUser();
+			delelopuser.deluserelop();
+			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.DeleteElopUser, "TestCases");
+		} catch (Exception e) {
+			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.DeleteElopUser, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
+			e.printStackTrace();
+		}
+					
+	}
+	
+	@Test(description = "ElopResetpassword", priority = 5)
+	public void ElopResetpassword() throws Exception {
+		try {
+			reset=driverhome.getreset();
+			reset.resetpassword();
+			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.ElopUserResetPassword, "TestCases");
+		} catch (Exception e) {
+			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.ElopUserResetPassword, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
+			e.printStackTrace();
+		}
+					
+	}
+	
+	@Test(description = "ApprovePayment", priority = 6)
+	public void Creditpayment() throws Exception {
+		try {
+			approve=driverhome.getapprove();
+			approve.paymentcredit();
+			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.CreateSiteWithValidData, "TestCases");
+		} catch (Exception e) {
+			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.CreateSiteWithValidData, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
+			e.printStackTrace();
+		}
+					
+	}
+	
+	@Test(description = "SitesCreate", dataProvider = "getSite", priority = 7)
 	public void SiteCreate(DataInt dataInt) throws Exception {
 		try {
 			createsite=driverhome.getcreatesite();
@@ -86,7 +130,7 @@ public class TestSuite extends Base {
 					
 	}
 	
-	@Test(description = "SitesEdit", dataProvider = "getSite", priority = 5)
+	@Test(description = "SitesEdit", dataProvider = "getSite", priority = 8)
 	public void SiteEdit(DataInt dataInt) throws Exception {
 		try {
 			siteedit=driverhome.getsiteedit();
@@ -101,8 +145,8 @@ public class TestSuite extends Base {
 					
 	}
 	
-	@Test(description = "SitesDelete", priority = 6)
-	public void SitesDelete(DataInt dataInt) throws Exception {
+	@Test(description = "SitesDelete", priority = 9)
+	public void SitesDelete() throws Exception {
 		try {
 			sitedelete =driverhome.getsitedelete();
 			sitedelete.sitedelete();
@@ -116,7 +160,7 @@ public class TestSuite extends Base {
 					
 	}
 	
-	@Test(description = "createsiteuser",dataProvider = "getSiteUser", priority = 7)
+	@Test(description = "createsiteuser",dataProvider = "getSiteUser", priority = 10)
 	public void Createsiteuser(DataInt dataInt) throws Exception {
 		try {
 			siteuser=driverhome.getsiteuser();
@@ -131,7 +175,7 @@ public class TestSuite extends Base {
 					
 	}
 	
-	@Test(description = "editsiteuser",dataProvider = "getSiteUser", priority = 8)
+	@Test(description = "editsiteuser",dataProvider = "getSiteUser", priority = 11)
 	public void siteuseredit(DataInt dataInt) throws Exception {
 		try {
 			siteuseredit=driverhome.getsiteuseredit();
@@ -146,8 +190,38 @@ public class TestSuite extends Base {
 					
 	}
 	
-	@Test(description = "ParentsList", priority = 9)
-	public void Parents(DataInt dataInt) throws Exception {
+	@Test(description = "deletesiteuser", priority = 12)
+	public void siteuserdelete() throws Exception {
+		try {
+			delsiteuser=driverhome.getdelsiteuser();
+			delsiteuser.delsiteuser();
+			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.DeleteSiteUser, "TestCases");
+		} catch (Exception e) {
+			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.DeleteSiteUser, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
+			e.printStackTrace();
+		}
+					
+	}
+	
+	@Test(description = "resetpswduser", priority = 13)
+	public void resetsiteuserpassword() throws Exception {
+		try {
+			resetsiteuser=driverhome.getresetsiteuser();
+			resetsiteuser.resetlink();
+			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.SiteUserResetPassword, "TestCases");
+		} catch (Exception e) {
+			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.SiteUserResetPassword, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
+			e.printStackTrace();
+		}
+					
+	}
+	
+	@Test(description = "ParentsList", priority = 14)
+	public void Parents() throws Exception {
 		try {
 			parent=driverhome.getparent();
 			parent.parentslist();
@@ -161,8 +235,38 @@ public class TestSuite extends Base {
 					
 	}
 	
-	@Test(description = "StudentsList", priority = 10)
-	public void Students(DataInt dataInt) throws Exception {
+	@Test(description = "ParentsDisable", priority = 15)
+	public void disableParent() throws Exception {
+		try {
+			inactive=driverhome.getinactive();
+			inactive.disable();
+			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.ParentInActive, "TestCases");
+		} catch (Exception e) {
+			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.ParentInActive, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
+			e.printStackTrace();
+		}
+					
+	}
+	
+	@Test(description = "Parentresetpassword", priority = 16)
+	public void Parentresetpassword() throws Exception {
+		try {
+			resetpasswordparent=driverhome.getresetpasswordparent();
+			resetpasswordparent.resetlinktouser();
+			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.ParentResetPassword, "TestCases");
+		} catch (Exception e) {
+			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.ParentResetPassword, "TestCases");
+			excep=e.toString();
+			Assert.fail(excep);
+			e.printStackTrace();
+		}
+					
+	}
+	
+	@Test(description = "StudentsList", priority = 17)
+	public void Students() throws Exception {
 		try {
 			student=driverhome.getstudent();
 			student.studentslist();
@@ -176,8 +280,8 @@ public class TestSuite extends Base {
 					
 	}
 	
-	@Test(description = "AdmitStudentfromWaitingList", priority = 11)
-	public void AdmitStudent(DataInt dataInt) throws Exception {
+	@Test(description = "AdmitStudentfromWaitingList", priority = 18)
+	public void AdmitStudent() throws Exception {
 		try {
 			admit=driverhome.getadmit();
 			admit.admitstudentfromwl();
@@ -192,7 +296,7 @@ public class TestSuite extends Base {
 	}
 	
 	@Test(description = "ChangeProgramorSiteLocations", priority = 12)
-	public void ChangeProgramorSiteLocations(DataInt dataInt) throws Exception {
+	public void ChangeProgramorSiteLocations() throws Exception {
 		try {
 			progrmsite=driverhome.getprogrmsite();
 			progrmsite.progrmorsite();
@@ -683,19 +787,7 @@ public class TestSuite extends Base {
 		}				
 	}
 	
-	@Test(description = "AdminLogout" ,priority = 45)
-	public void AdminLogout(DataInt dataInt) throws Exception {
-		try {
-			signout=driverhome.getsignout();
-			signout.signout();
-			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_PASS, ExcelSheetObjects.Logout, "TestCases");
-		} catch (Exception e) {
-			SetupEnvironment.createXLSReport(ExcelSheetObjects.KEYWORD_FAIL,ExcelSheetObjects.Logout, "TestCases");
-			excep=e.toString();
-			Assert.fail(excep);
-			e.printStackTrace();
-		}				
-	}
+	
 	
 	@DataProvider
 	public Iterator<Object[]> getLogin() {

@@ -43,6 +43,18 @@ public class DriverHome extends CommonBase {
 		
 	}
 	
+	public DeleteELOPUser getdelDeleteELOPUser(){
+		return PageFactory.initElements(driver, DeleteELOPUser.class);
+	}
+	
+	public ElopUserResetPassword getreset(){
+		return PageFactory.initElements(driver, ElopUserResetPassword.class);
+	}
+	
+	public ApprovePaymentorCredit getapprove(){
+		return PageFactory.initElements(driver, ApprovePaymentorCredit.class);
+	}
+	
 	public CreateSite getcreatesite(){
 		return PageFactory.initElements(driver, CreateSite.class);
 		
@@ -73,8 +85,27 @@ public class DriverHome extends CommonBase {
 		
 	}
 	
+	public DeleteSiteUser getdelsiteuser(){
+		return PageFactory.initElements(driver, DeleteSiteUser.class);
+	}
+	
+	public SiteUserResetPassword getresetsiteuser(){
+		return PageFactory.initElements(driver, SiteUserResetPassword.class);
+	}
+	
+	
 	public Parents getparent(){
 		return PageFactory.initElements(driver, Parents.class);
+		
+	}
+	
+	public ParentInActive getinactive(){
+		return PageFactory.initElements(driver, ParentInActive.class);
+		
+	}
+	
+	public ParentResetPassword getresetpasswordparent(){
+		return PageFactory.initElements(driver, ParentResetPassword.class);
 		
 	}
 	
@@ -253,9 +284,6 @@ public class DriverHome extends CommonBase {
 		
 	}
 	
-	public Logout getsignout(){
-		return PageFactory.initElements(driver, Logout.class);
-		
-	}
+	
 }
 
