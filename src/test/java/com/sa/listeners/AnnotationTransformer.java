@@ -18,11 +18,11 @@ public class AnnotationTransformer implements IAnnotationTransformer {
 	
 	@SuppressWarnings({ "rawtypes"})
 	public void transform(ITestAnnotation annotation, Class testClass, Constructor testConstructor, Method testMethod){ 
-	
 		SetupEnvironment se = new SetupEnvironment();
     	ArrayList<String> ae = new ArrayList<String>();
 		
     	try {
+			annotation.setRetryAnalyzer(Retry.class);
 				ae = se.start();
     	}
     	catch (IllegalAccessException e) {
