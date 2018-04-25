@@ -54,7 +54,7 @@ public class Students extends CommonBase {
 				 List<WebElement> sitename = dd2.getOptions();
 				 for(WebElement we:sitename)  {  
 				      for (int i=0; i<progrmValue.size(); i++){
-				   	  for (int j = 0; j <sitename.size(); j++) {
+				   	  
 				          if (we.getText().equals(progrmValue.get(i).getText())){
 				          System.out.println("Matched");
 				          
@@ -62,7 +62,7 @@ public class Students extends CommonBase {
 				       	  System.out.println("Not Matched");
 				          }
 				          break;
-				   	  }
+				   	  
 				   	  
 				       }
 				
