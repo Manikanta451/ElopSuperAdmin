@@ -1,60 +1,76 @@
 package com.sa.listeners;
 
-import java.io.File;
-import java.util.List;
-import java.util.Map;
-import org.testng.IReporter;
-import org.testng.IResultMap;
-import org.testng.ISuite;
-import org.testng.ISuiteResult;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
+import org.testng.ITestListener;
 import org.testng.ITestResult;
-import org.testng.xml.XmlSuite;
-import com.relevantcodes.extentreports.ExtentReports;
-import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
+import com.sa.pagefactory.CommonBase;
+import com.sa.utilities.ExtentManager;
+import com.sa.utilities.ExtentTestManager;
 
-public class ExtentReporterNG implements IReporter {
+public class ExtentReporterNG implements ITestListener {
 	
-    private ExtentReports extent;
-
-    public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites, String outputDirectory) {
-        extent = new ExtentReports(outputDirectory + File.separator + "Extent.html", true);
-
-        for (ISuite suite : suites) {
-            Map<String, ISuiteResult> result = suite.getResults();
-
-            for (ISuiteResult r : result.values()) {
-                ITestContext context = r.getTestContext();
-                buildTestNodes(context.getFailedTests(), LogStatus.FAIL);
-                buildTestNodes(context.getSkippedTests(), LogStatus.SKIP);
-                buildTestNodes(context.getPassedTests(), LogStatus.PASS);
-            }
-        }
-
-        extent.flush();//Once your session is complete and you are ready to write all logs to the report, simply call the flush() method.
-        extent.close();
-       
+	private static String getTestMethodName(ITestResult iTestResult) {
+        return iTestResult.getMethod().getConstructorOrMethod().getName();
     }
-
-    private void buildTestNodes(IResultMap tests, LogStatus status) {
-        ExtentTest test;
-
-        if (tests.size() > 0) {
-            for (ITestResult result : tests.getAllResults()) {
-                test = extent.startTest(result.getMethod().getMethodName());
-
-                String message = "Test " + status.toString().toLowerCase() + "ed";
-
-                if (result.getThrowable() != null)
-                    message = result.getThrowable().getMessage();
-
-                test.log(status, message);
-
-                extent.endTest(test);// To end, simply call endTest(testInstance).
-
-
-            }
-        }
+    
+    //Before starting all tests, below method runs.
+    
+    public void onStart(ITestContext iTestContext) {
+        System.out.println("I am in onStart method " + iTestContext.getName());
+        iTestContext.setAttribute("WebDriver", CommonBase.driver);
     }
+ 
+    //After ending all tests, below method runs.
+    
+    public void onFinish(ITestContext iTestContext) {
+        System.out.println("I am in onFinish method " + iTestContext.getName());
+        //Do tier down operations for extentreports reporting!
+        ExtentTestManager.endTest();
+        ExtentManager.getReporter().flush();
+    }
+ 
+    
+    public void onTestStart(ITestResult iTestResult) {
+        System.out.println("I am in onTestStart method " +  getTestMethodName(iTestResult) + " start");
+        //Start operation for extentreports.
+        ExtentTestManager.startTest(iTestResult.getMethod().getMethodName(),"");
+    }
+ 
+    
+    public void onTestSuccess(ITestResult iTestResult) {
+        System.out.println("I am in onTestSuccess method " +  getTestMethodName(iTestResult) + " succeed");
+        //Extentreports log operation for passed tests.
+        ExtentTestManager.getTest().log(LogStatus.PASS, "Test passed");
+    }
+ 
+    
+    public void onTestFailure(ITestResult iTestResult) {
+        System.out.println("I am in onTestFailure method " +  getTestMethodName(iTestResult) + " failed");
+ 
+        //Get driver from BaseTest and assign to local webdriver variable.
+        WebDriver webDriver = CommonBase.driver;
+ 
+        //Take base64Screenshot screenshot.
+        String base64Screenshot = "data:image/png;base64,"+((TakesScreenshot)webDriver).getScreenshotAs(OutputType.BASE64);
+ 
+        //Extentreports log and screenshot operations for failed tests.
+        ExtentTestManager.getTest().log(LogStatus.FAIL,"Test Failed",ExtentTestManager.getTest().addBase64ScreenShot(base64Screenshot));
+    }
+ 
+    
+    public void onTestSkipped(ITestResult iTestResult) {
+        System.out.println("I am in onTestSkipped method "+  getTestMethodName(iTestResult) + " skipped");
+        //Extentreports log operation for skipped tests.
+        ExtentTestManager.getTest().log(LogStatus.SKIP, "Test Skipped");
+    }
+ 
+    
+    public void onTestFailedButWithinSuccessPercentage(ITestResult iTestResult) {
+        System.out.println("Test failed but it is in defined success ratio " + getTestMethodName(iTestResult));
+    }
+   
 }
