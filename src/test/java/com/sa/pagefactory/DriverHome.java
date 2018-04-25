@@ -3,7 +3,7 @@ package com.sa.pagefactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import com.gargoylesoftware.htmlunit.Page;
+//import com.gargoylesoftware.htmlunit.Page;
 import com.sa.utilities.PropertiesFileReader;
 
 /**
