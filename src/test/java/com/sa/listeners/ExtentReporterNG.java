@@ -19,6 +19,7 @@ public class ExtentReporterNG implements ITestListener {
     
     //Before starting all tests, below method runs.
     
+	
     public void onStart(ITestContext iTestContext) {
         System.out.println("I am in onStart method " + iTestContext.getName());
         iTestContext.setAttribute("WebDriver", CommonBase.driver);
