@@ -354,6 +354,46 @@ public static String excep;
 		
 		    }
 		
+		public static LinkedList<Object[]> getResource(String sheetName9,Xls_Reader xls) {
+			
+			LinkedList<Object[]> Resource = new LinkedList<Object[]>();
+		
+			try {
+				DataInt dataInitialization = null;
+				int dataStartRowNum = 3;
+				int totalRows = 0;
+		
+				while (!xls.getCellData(sheetName9, 0, dataStartRowNum + totalRows).equals("")) {
+					
+					totalRows++;
+				}
+		
+				for (int i = dataStartRowNum; i <= (dataStartRowNum + totalRows); i++) {
+		
+					dataInitialization = new DataInt();
+					Object obj[] = new Object[1];
+		
+					if (xls.getCellData(sheetName9, 0, i).equalsIgnoreCase("Resource")) {
+		
+						dataInitialization.setUrl(xls.getCellData(sheetName9, 1, i));
+						dataInitialization.setResourcetitle(xls.getCellData(sheetName9, 2, i));
+						dataInitialization.setResourceDescription(xls.getCellData(sheetName9, 3, i));
+						dataInitialization.setDisplayOrder(xls.getCellData(sheetName9, 4, i));
+						obj[0] = dataInitialization;
+						Resource.add(obj);
+					}
+				}
+		
+						} catch (Exception e) {
+							 excep=e.toString();
+							 Assert.fail(excep);
+							 e.printStackTrace();
+					
+						}
+						return Resource;
+		
+		    }
+		
 		public static LinkedList<Object[]> getSiteInfo(String sheetName9,Xls_Reader xls) {
 					
 			LinkedList<Object[]> SiteInfo = new LinkedList<Object[]>();
