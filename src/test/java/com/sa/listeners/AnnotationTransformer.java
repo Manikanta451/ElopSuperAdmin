@@ -22,8 +22,9 @@ public class AnnotationTransformer implements IAnnotationTransformer {
     	ArrayList<String> ae = new ArrayList<String>();
 		
     	try {
-			annotation.setRetryAnalyzer(Retry.class);
 			ae = se.start();
+			annotation.setRetryAnalyzer(Retry.class);
+
     	}
     	catch (IllegalAccessException e) {
     		excep=e.toString();
