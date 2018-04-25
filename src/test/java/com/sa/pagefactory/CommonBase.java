@@ -98,7 +98,7 @@ public class CommonBase {
 	public String sikulipath = System.getProperty("user.dir");
 	public String imagepath  = System.getProperty("user.dir");
 	public static String reportpath1 = System.getProperty("user.dir")+ System.getProperty("file.separator")+ "test-output"+ System.getProperty("file.separator")+ "TestReport.xlsx";
-	public static String reportpath2 = System.getProperty("user.dir")+ System.getProperty("file.separator")+ "test-output"+ System.getProperty("file.separator")+ "Extent.html";
+	public static String extentreportpath = System.getProperty("user.dir")+ System.getProperty("file.separator")+ "ExtentReports"+ System.getProperty("file.separator")+ "ExtentReportResults.html";
 	public static String reportpath3 = System.getProperty("user.dir")+ System.getProperty("file.separator")+ "src/main/java/com/sa/test/data"+ System.getProperty("file.separator")+ "TestCases.xlsx";
 	public String screenshot = System.getProperty("user.dir") + "_Screenshot";
 	public String str;
@@ -631,7 +631,7 @@ public class CommonBase {
 						 multipart.addBodyPart(objMessageBodyPart);
 						 objMessageBodyPart = new MimeBodyPart();
 						 addAttachment(multipart, reportpath1);
-						 addAttachment(multipart, reportpath2);
+						 addAttachment(multipart, extentreportpath);
 						 addAttachment(multipart, reportpath3);
 						 message.setContent(multipart);
 						 Transport transport = session.getTransport("smtp");
