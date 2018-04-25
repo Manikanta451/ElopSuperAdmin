@@ -124,8 +124,21 @@ public class DataInt implements Serializable {
 					public String Description="";
 					
 					
+		//----- Resource -----//
+					
+					public String url="";
+					
+					public String Resourcetitle	="";
+					
+					public String ResourceDescription="";
+					
+					public String DisplayOrder="";
+					
+					
 		//---- Site Info-----//
 					
+					
+
 					public String siteinfositename="";
 					
 					public String siteinfoSiteTypeId="";
@@ -556,12 +569,53 @@ public class DataInt implements Serializable {
 						Description = description;
 					}
 					
+				
+						
+			//  ----Resource Getter & Setter Methods ---//
+					
+					public String getUrl() {
+						return url;
+					}
+
+					public void setUrl(String url) {
+						this.url = url;
+					}
+
+					public String getResourcetitle() {
+						return Resourcetitle;
+					}
+
+					public void setResourcetitle(String resourcetitle) {
+						Resourcetitle = resourcetitle;
+					}
+
+					public String getResourceDescription() {
+						return ResourceDescription;
+					}
+
+					public void setResourceDescription(String resourceDescription) {
+						ResourceDescription = resourceDescription;
+						
+					}
+					
+					public String getDisplayOrder() {
+						return DisplayOrder;
+					}
+
+					public void setDisplayOrder(String displayOrder) {
+						DisplayOrder = displayOrder;
+					}
+					
 			//---- Site Info Getter & setter Methods---//
 					
 					
+				
+
 					public String getSiteinfositename() {
 						return siteinfositename;
 					}
+
+
 					public void setSiteinfositename(String siteinfositename) {
 						this.siteinfositename = siteinfositename;
 					}
